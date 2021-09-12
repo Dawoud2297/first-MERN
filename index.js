@@ -13,7 +13,9 @@ const port = process.env.PORT || 5002
 MongoDBClient.connect(
     process.env.RESTREVIEWS_DB,
     {
-        poolSize:50,
+        maxPoolSize:50,
+        wtimeoutMS : 2500,
+        // useNewUrlParse : true
     }
 )
 .catch(e=>{
