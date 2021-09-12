@@ -104,6 +104,9 @@ export default function Restaurant(props) {
                     </div>
                 )
             }
+            <div className="m-4">
+            <Link to="/restaurants" className="btn btn-danger btn-lg justify-content-center align-items-center col-lg-5">Back</Link>
+            </div>
         </div>
     )
 }
