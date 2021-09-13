@@ -21,15 +21,15 @@ module.exports =  class RestaurantsDAO{
         let query
         if(filters){
             if('name' in filters){
-                query = {$text : {$search : filters["name"]}}
+                query = {'name':{$eq:filters["name"]}}
             }else if('zipcode' in filters){
                 query = {'address.zipcode' : {$eq : filters["zipcode"]}}
             }else if('cuisine' in filters){
                 query = {'cuisine' : {$eq : filters['cuisine']}}
             }
         }
+        
         let cursor
-
         try{
             cursor = await restaurants.find(query)
         }catch(e){
